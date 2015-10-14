@@ -1,0 +1,74 @@
+
+<ion-view view-title="订位" id="view_booking">
+    <ion-nav-title>
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="搜索">
+            </label>
+            <button class="button button-clear">
+                取消
+            </button>
+        </div>
+        <div class="bar bar-subheader">
+            <div class="button-bar">
+                <a class="button button-clear" >特价菜</a>
+                <a class="button button-positive">招牌菜</a>
+                <a class="button button-clear" href="javascript:;">排行榜</a>
+                <a class="button button-clear">套餐一</a>
+                <a class="button button-clear">套餐二</a>
+            </div>
+        </div>
+    </ion-nav-title>
+    <!--
+    <div class="bar bar-subheader">
+        <div class="tabs-striped  tabs-background-positive tabs-color-light">
+            <div class="tabs">
+                <a class="tab-item active" href="#">
+
+                    Test
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-star"></i>
+                    Favorites
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-gear-a"></i>
+                    Settings
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    -->
+    <div class="bar bar-subheader bar-light">
+        <div class="button-bar">
+            <a class="button button-clear">特价菜</a>
+            <a class="button {{ftype == 'zhaopai'? 'button-positive':'button-clear'}}" ng-click="changeType('zhaopai')" >招牌菜</a>
+            <a class="button {{ftype == 'paihang'? 'button-positive':'button-clear'}}"  ng-click="changeType('paihang')" >排行榜</a>
+            <a class="button button-clear">套餐一</a>
+            <a class="button button-clear" >套餐二</a>
+        </div>
+    </div>
+  <ion-content style="top: 88px;" >
+
+
+    <ion-list>
+          <ion-item class="item-remove-animate item-thumbnail-left  item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/fmenu/{{chat.id}}">
+              <img ng-src="{{chat.face}}">
+              <h2>{{chat.name}}</h2>
+              <p>{{chat.lastText}}</p>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+
+              <ion-option-button class="button-assertive" >
+                  Delete
+              </ion-option-button>
+          </ion-item>
+      </ion-list>
+
+
+
+
+  </ion-content>
+</ion-view>

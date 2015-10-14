@@ -1,0 +1,69 @@
+
+<ion-view view-title="发现" >
+  <ion-content >
+      <!-- slide box -->
+      <ion-slide-box class="home-banner-container">
+          <ion-slide >
+              <a ng-href="">
+                  <img src="img/20151001090222888790204.jpg" alt="休闲必备，清甜酒饮">
+              </a>
+          </ion-slide>
+          <ion-slide >
+              <a ng-href="">
+                  <img src="img/20151001090222888790204.jpg" alt="休闲必备，清甜酒饮">
+              </a>
+          </ion-slide>
+          <ion-slide >
+              <a ng-href="">
+                  <img src="img/20151001090222888790204.jpg" alt="休闲必备，清甜酒饮">
+              </a>
+          </ion-slide>
+      </ion-slide-box>
+
+      <!-- shortcut -->
+      <div class="home-shortcut">
+          <a href="#/tab/carryout?category=conveniences">
+              <img src="img/icon_errands.png">
+              <p>订位</p>
+          </a>
+          <a href="#/tab/carryout?category=errands">
+              <img src="img/icon_buy.png">
+              <p>点餐</p>
+          </a>
+          <a href="#/tab/carryout">
+              <img src="img/icon_carryout.png">
+              <p>外卖</p>
+          </a>
+
+
+      </div>
+
+      <div class="hot-store">
+          <h4>热门菜色<a href="#/tab/carryout">更多</a></h4>
+
+
+
+
+      <ion-list>
+          <ion-item class="item-remove-animate item-thumbnail-left  item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+              <img ng-src="{{chat.face}}">
+              <h2>{{chat.name}}</h2>
+              <p>{{chat.lastText}}</p>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+
+              <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                  Delete
+              </ion-option-button>
+          </ion-item>
+      </ion-list>
+
+      </div>
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

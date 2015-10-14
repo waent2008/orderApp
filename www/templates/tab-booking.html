@@ -1,0 +1,50 @@
+<style>
+    #view_booking .card .col{
+        margin: 2px;
+        background-color: #387ef5;
+        text-align: center;
+    }
+</style>
+<ion-view view-title="订位" id="view_booking">
+
+  <ion-content >
+      <form form-produce="formControls.conf">
+          <div class="list">
+
+              <label class="item item-input ">
+                  <span class="input-label">收件人</span>
+                  <input type="text" placeholder="收件人" input-produce="formControls.addressee" ng-model="formControls.model.addressee"/>
+              </label>
+              <label class="item item-input">
+                  <p style="width:80px;">联系电话</p>
+                  <input type="text" placeholder="联系电话" input-produce="formControls.phone" ng-model="formControls.model.phone"/>
+              </label>
+              <label class="item item-input">
+                  <p style="width:80px;">详细地址</p>
+                  <input type="text" placeholder="详细地址" input-produce="formControls.address" ng-model="formControls.model.address"/>
+              </label>
+          </div>
+          <div class="padding">
+              <button class="button button-block button-balanced">添加到我的地址薄</button>
+          </div>
+      </form>
+
+      <div class="list">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name</span>
+              <input type="text" placeholder="John">
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name</span>
+              <input type="text" placeholder="Suhr">
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Email</span>
+              <input type="text" placeholder="john@suhr.com">
+          </label>
+      </div>
+
+
+
+  </ion-content>
+</ion-view>

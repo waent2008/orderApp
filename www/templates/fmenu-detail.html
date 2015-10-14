@@ -1,0 +1,24 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{fmenu.name}}">
+  <ion-content class="fmenu">
+      <div class="fmenu-banner">
+          <img ng-src="{{fmenu.face}}">
+      </div>
+      <div class="desc-wrap">
+          <div class="desc" >
+              <p>10块装鸡翅拼盘：新奥尔良风味鸡翅(2块)*2；北美特色枫香烤翅(2块)*2；烧烤BdfdfdBQ鸡翅(2块)*1</p>
+          </div>
+      </div>
+
+      <div class="fmenuBar">
+          <p class="numTip"><span class="highlight">{{fmenu.lastText}}元 </span> </p>
+          <div class="button button-positive" style="width:100%;">加入菜单</div>
+      </div>
+
+  </ion-content>
+</ion-view>
