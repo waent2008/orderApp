@@ -58,4 +58,11 @@ angular.module('starter.controllers', [])
 })
 .controller('FmenuDetailCtrl', function($scope, $stateParams, Chats) {
     $scope.fmenu = Chats.get($stateParams.chatId);
+})
+.controller('OrdersCtrl', function($scope, Chats) {
+
+    $scope.chats = Chats.all();
+    $scope.remove = function(chat) {
+        Chats.remove(chat);
+    };
 });

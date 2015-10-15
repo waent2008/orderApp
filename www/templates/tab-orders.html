@@ -1,0 +1,33 @@
+<ion-view view-title="菜单">
+  <ion-content>
+      <div class="orders-group" >
+          <h5 class="orders-group-title">
+              <a href="javascript:;" class="cart-group-remove" ng-click="removeItem(null, shop.id)">全部移除</a>
+              <a ng-href="{{ shop.id==1?'#/tab/market': '#/tab/carryout/' + shop.id }}" ng-bind="shop.name"></a>
+          </h5>
+          <ul class="list order-items">
+              <li class="item" >
+                  <img  alt="" class="order-item-pic" />
+                    <span class="order-item-info">
+                        <h5 ></h5>
+                        价格:dfd<br/>
+                        <strong>ddd</strong>
+                    </span>
+                    <span class="order-item-stepper">
+                        <span class="stepper-container">
+                            <button class="icon ion-minus-round" ng-click="subQuantity(item, shop)"></button>
+
+                            <button class="icon ion-plus-round" ng-click="addQuantity(item, shop)"></button>
+                        </span>
+                    </span>
+                    <span class="order-item-remove">
+                        <button class="icon ion-ios7-close-outline" ng-click="removeItem(item.id, shop.id)"></button>
+                    </span>
+              </li>
+          </ul>
+          <p class="cart-group-total">
+              共计<span >1</span>件商品，合计<span >d</span>元
+          </p>
+      </div>
+  </ion-content>
+</ion-view>
