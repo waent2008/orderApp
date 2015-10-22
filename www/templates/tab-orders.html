@@ -6,23 +6,24 @@
               <a ng-href="{{ shop.id==1?'#/tab/market': '#/tab/carryout/' + shop.id }}" ng-bind="shop.name"></a>
           </h5>
           <ul class="list order-items">
-              <li class="item" >
-                  <img  alt="" class="order-item-pic" />
-                    <span class="order-item-info">
-                        <h5 ></h5>
-                        价格:dfd<br/>
+              <li class="item " >
+                    <img  alt="" class="order-item-pic" />
+                    <span class="order-item-info ">
+                        <h5 >在</h5>
+                        价格:<br/>
                         <strong>ddd</strong>
                     </span>
                     <span class="order-item-stepper">
                         <span class="stepper-container">
                             <button class="icon ion-minus-round" ng-click="subQuantity(item, shop)"></button>
-
+                            <em ng-bind="item.quantity || '0'"></em>
                             <button class="icon ion-plus-round" ng-click="addQuantity(item, shop)"></button>
                         </span>
                     </span>
                     <span class="order-item-remove">
-                        <button class="icon ion-ios7-close-outline" ng-click="removeItem(item.id, shop.id)"></button>
+                        <button class="icon ion-ios-close-outline" ng-click="removeItem(item.id, shop.id)"></button>
                     </span>
+
               </li>
           </ul>
           <p class="cart-group-total">
