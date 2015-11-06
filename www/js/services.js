@@ -141,4 +141,17 @@ angular.module('starter.services', [])
         },
         ftype:"paihang"
     };
-});
+})
+.factory('orderOperation',['localStorageService',function(localStorageService) {
+    var keyName = 'fOrder';
+    return {
+        get: function() {
+            var all = localStorageService.get(keyName);
+            return all;
+        },
+        set: function(item) {
+            var all = localStorageService.get(keyName) || {};
+
+        }
+    }
+}]);

@@ -56,13 +56,29 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 })
-.controller('FmenuDetailCtrl', function($scope, $stateParams, Chats) {
-    $scope.fmenu = Chats.get($stateParams.chatId);
-})
-.controller('OrdersCtrl', function($scope, Chats) {
+.controller('FmenuDetailCtrl',['$scope','$stateParams','orderOperation','Chats', function($scope, $stateParams, orderOperation,Chats) {
+    var fmenu = Chats.get($stateParams.chatId);
+    $scope.fmenu = fmenu;
+    $scope.addItem = function(fmenu) {
+        orderOperation.set(fmenu);
+    }
 
-    $scope.chats = Chats.all();
-    $scope.remove = function(chat) {
-        Chats.remove(chat);
-    };
-});
+
+
+}])
+.controller('OrdersCtrl',['$scope','orderOperation', function(orderOperation) {
+
+
+    var orderData = {orders:null,note:null};
+
+    function initData() {
+        var data = orderOperation.get();
+        orderData.orders = [];
+        for(var i in data) {
+            orderData.orders.push(date[i]);
+        }
+    }
+
+    initData();
+
+}]);
