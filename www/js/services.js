@@ -75,6 +75,7 @@ angular.module('starter.services', [])
   };
 })
 .factory("FmenuList",function() {
+
     var fmenuList = [{
         id: 0,
         name: '蒸酿小番茄2222222',
@@ -147,10 +148,14 @@ angular.module('starter.services', [])
     return {
         get: function() {
             var all = localStorageService.get(keyName);
+            console.log(all);
             return all;
         },
         set: function(item) {
             var all = localStorageService.get(keyName) || {};
+            var fmeun = {items:[item]}
+            return localStorageService.set(keyName,fmeun);
+
 
         }
     }

@@ -5,13 +5,13 @@
               <a href="javascript:;" class="cart-group-remove" ng-click="removeItem(null, shop.id)">全部移除</a>
               <a ng-href="{{ shop.id==1?'#/tab/market': '#/tab/carryout/' + shop.id }}" ng-bind="shop.name"></a>
           </h5>
-          <ul class="list order-items">
-              <li class="item " >
+          <ul class="list order-items" >
+              <li class="item " ng-repeat="item in orderData.orders">
                     <img  alt="" class="order-item-pic" />
                     <span class="order-item-info ">
-                        <h5 >在{{order}}</h5>
+                        <h5 >{{item.name}}</h5>
                         价格:<br/>
-                        <strong>ddd</strong>
+                        <strong>{{item.lastText}}</strong>
                     </span>
                     <span class="order-item-stepper">
                         <span class="stepper-container">

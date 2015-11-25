@@ -8,7 +8,9 @@ angular.module('starter.controllers', [])
 })
 .controller('BookingCtrl', function($scope) {})
 .controller('FmenuCtrl', function($scope,Chats,FmenuList) {
-        console.log("FmenuCtrl");
+
+
+
         $scope.chats = Chats.all();
         $scope.ftype = Chats.ftype;
         $scope.remove = function(chat) {
@@ -60,22 +62,26 @@ angular.module('starter.controllers', [])
     var fmenu = Chats.get($stateParams.chatId);
     $scope.fmenu = fmenu;
     $scope.addItem = function(fmenu) {
-        orderOperation.set(fmenu);
+        var all = orderOperation.set(fmenu);
+        console.log("set");
+        console.log(all);
+
     }
 
 
 
 }])
-.controller('OrdersCtrl',['$scope','orderOperation', function(orderOperation) {
+.controller('OrdersCtrl',['$scope','orderOperation', function($scope, orderOperation) {
 
 
     var orderData = {orders:null,note:null};
-
+    $scope.orderData = orderData;
     function initData() {
         var data = orderOperation.get();
         orderData.orders = [];
-        for(var i in data) {
-            orderData.orders.push(date[i]);
+
+        for(var i = 0;i < data.items.length; i++) {
+            orderData.orders.push(data.items[i]);
         }
     }
 
